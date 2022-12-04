@@ -29,6 +29,8 @@ router.post('/',async (req,res)=>{
             if(rows[0].passwd==passwd)
             {
                 console.log("Successfull login");
+                req.session.user=username;
+                res.redirect('/home');
             }
             else
             {
