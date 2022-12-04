@@ -5,15 +5,18 @@
         <div class="col-md-12 ">
           <div class="signup">
             <h2>Welcome Back</h2>
-            <div class="form-floating mb-3 mt-5">
-              <input type="text" class="form-control" id="floatingInput" placeholder="username">
-              <label for="floatingInput">Username</label>
-            </div>
-            <div class="form-floating mb-3">
-              <input type="password" class="form-control" id="floatingPassword" placeholder="Password">
-              <label for="floatingPassword">Password</label>
-            </div>
-            <button type="submit" class="btn btn-primary mb-3">Login</button>
+            <form action="/login" method="post">
+                <div class="form-floating mb-3 mt-5">
+                  <input name="username" type="text" class="form-control" id="floatingInput" placeholder="username">
+                  <label for="floatingInput">Username</label>
+                </div>
+                <div class="form-floating mb-3">
+                  <input name="passwd" type="password" class="form-control" id="floatingPassword" placeholder="Password">
+                  <label for="floatingPassword">Password</label>
+                  <p class="pt-2" style="color: red;"><%= locals.errormsg? errormsg  : "" %></p>
+                </div>
+                <button type="submit" class="btn btn-primary mb-3">Login</button>
+            </form>
             <p>Not a Member?<a href="signup/page"><button type="button" class="btn btn-link">Sign Up</button></a></p>
           </div>
         </div>

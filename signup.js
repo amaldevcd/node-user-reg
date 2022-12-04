@@ -1,6 +1,6 @@
 var express = require('express')
 const mysql = require('mysql');
-
+const db = require('./db');
 
 const router = express.Router();
 
@@ -8,21 +8,6 @@ var errormsg=null;
 var newuser=true;
 var successnote=null;
 
-var connection = mysql.createConnection({
-    host:'localhost',
-    user : 'root',
-    password:'',
-    database : 'sampusr'
-})
-
-connection.connect(function(error)
-{
-    if(!!error)
-    {
-        console.log(error);
-    }
-    else{console.log("Connected to the db");}
-})
 
 
 
