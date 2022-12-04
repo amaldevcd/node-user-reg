@@ -1,0 +1,39 @@
+<%- include ('header') -%>
+<body style="background-color:skyblue;">
+    <div class="container screen" data-aos="zoom-in" data-aos-duration="4000"  data-aos-delay="50" data-aos-easing="ease-in-out">
+      <div class="row">
+        <div class="col-md-12 ">
+          <div class="signup">
+            <h2>Create Account</h2>
+            <form action="/signup" method="post">
+                <div class="form-floating mb-3 mt-5">
+                  <input name="name" type="text" class="form-control" id="floatingInput" placeholder="name">
+                  <label for="floatingInput">Name</label>
+                </div>
+                <div class="form-floating mb-3">
+                  <input name="username" type="text" class="form-control" id="floatingInput" placeholder="username">
+                  <label for="floatingInput">Username</label>
+                </div>
+                <div class="form-floating mb-3">
+                  <input name="mobno" type="text" class="form-control" id="floatingInput" placeholder="number">
+                  <label for="floatingInput">Mobile Number</label>
+                </div>
+                <div class="form-floating mb-3">
+                  <input name="passwd" type="password" class="form-control" id="floatingPassword" placeholder="Password">
+                  <label for="floatingPassword">Password</label>
+                </div>
+                <div class="form-floating mb-5">
+                  <input name="cpasswd" type="password" class="form-control" id="floatingPassword" placeholder="Password">
+                  <label for="floatingPassword"> Confirm Password</label>
+                  <p class="pt-2 danger" style="color: red;"><%= locals.errormsg? errormsg  : " " %></p>
+                  <p class="pt-2 danger" style="color: yellowgreen;"><%= locals.successnote? successnote  : " " %></p>
+                </div>
+                <button type="submit" class="btn btn-primary mb-3">Sign Up</button>
+            </form>
+            <p>Already a Member?<a href="/login/page"><button type="button" class="btn btn-link">Login</button></a></p>
+          </div>
+        </div>
+      </div>
+    </div>
+</body>
+<%- include('footer') -%>
